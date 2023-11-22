@@ -1,1 +1,1 @@
-A collection of interesting and fun algorithm and datastructure problems and solutions in C++, Python and Rust.
+An assortment of interesting algorithmic and data structure challenges along with solutions in C++, Python, and Rust.
