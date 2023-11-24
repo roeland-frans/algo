@@ -9,6 +9,7 @@ fn main() {
     let n = 150;
     let mut cache = vec![0u128; n + 1];
     println!("Fast Fibonacci of {n}: {}", fast_fib(n, &mut cache));
+    println!("Efficient Fibonacci of {n}: {}", efficient_fib(n));
 }
 
 fn fib(n: usize) -> usize {
@@ -36,4 +37,20 @@ fn fast_fib(n: usize, cache: &mut Vec<u128>) -> u128 {
     }
     cache[n] = value;
     return value;
+}
+
+fn efficient_fib(n: usize) -> u128 {
+    let mut f = [0_u128, 1_u128];
+
+    for i in 2..=n {
+        let next = f[1] + f[0];
+        f[0] = f[1];
+        f[1] = next;
+    }
+
+    if n > 1 {
+        f[1]
+    } else {
+        f[0]
+    }
 }
